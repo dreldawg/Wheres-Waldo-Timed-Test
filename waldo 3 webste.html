@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Where's Waldo</title>
+    <style>
+        #image-container {
+            position: relative;
+            display: inline-block;
+        margin: 0;
+        padding: 0;
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+        }
+        #click-area {
+            position: absolute;
+            top: 38.5%;  
+            left: 16.6%;
+            width: 30px;  
+            height: 50px;
+            background: rgb(200, 0, 0, 0);
+            cursor: pointer;
+            transform: translate(100%, 100%);
+        }
+        h1 {text-align: center;}
+        p {text-align: center;}
+        body {text-align: center;}
+        div {text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Find Waldo to Stop the Timer</h1>
+    <a href ="waldo 1 website.html">Easy</a>    <a href ="waldo 2 website.html">Intermediate</a>
+    <h3 id="timer">Time: 0s</h3>
+   
+    <div id="image-container">
+        <img src="waldo hard.jpg" alt="Test Image">
+        <div id="click-area"></div>
+    </div>
+
+    <script>
+        let time = 0;
+        let timer = setInterval(() => {
+            time++;
+            document.getElementById("timer").innerText = `Time: ${time}s`;
+        }, 1000);
+
+        document.getElementById("click-area").addEventListener("click", () => {
+            clearInterval(timer);
+            alert("Timer Stopped!");
+        });
+    </script>
+</body>
+</html>
